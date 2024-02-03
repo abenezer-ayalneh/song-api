@@ -6,7 +6,9 @@ dotenv.config()
 
 // Create a connection to DB
 mongoose
-  .connect(process.env.MONGO_DB_URL ?? 'mongodb://localhost:27017/song')
+  .connect(process.env.MONGO_DB_URL ?? 'mongodb://mongo_db_user:mongo_db_password@localhost:27017/song', {
+    authSource: 'admin',
+  })
   .then(() => {
     console.log('Connected to MongoDB')
   })

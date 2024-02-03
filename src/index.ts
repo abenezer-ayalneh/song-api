@@ -36,9 +36,10 @@ app.get('/list', async (req: Request, res: Response) => {
 })
 
 // Update songs
-app.patch('/update', async (req: Request, res: Response) => {
+app.patch('/update/:id', async (req: Request, res: Response) => {
+  const { id } = req.params
   const { title, artist, album, genre } = req.body
-  const song = await Song.findOneAndUpdate({ id: req.body.id }, { title, artist, album, genre }, { new: true })
+  const song = await Song.findByIdAndUpdate(id , { title, artist, album, genre }, { new: true }).exec()
 
   res.status(200).json(song)
 })

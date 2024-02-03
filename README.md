@@ -1,7 +1,7 @@
 # Song API
 
 Develop a Rest API that will let you manage information for songs. Your API will be able to create, list, update and remove songs. You will only need to create one model to handle the
-song data. The expected information are
+song data. The expected information are:
 - Title
 - Artist
 - Album

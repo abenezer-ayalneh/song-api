@@ -36,7 +36,7 @@ app.get('/list', async (req: Request, res: Response) => {
 })
 
 // Update songs
-app.post('/update', async (req: Request, res: Response) => {
+app.patch('/update', async (req: Request, res: Response) => {
   const { title, artist, album, genre } = req.body
   const song = await Song.findOneAndUpdate({ id: req.body.id }, { title, artist, album, genre }, { new: true })
 

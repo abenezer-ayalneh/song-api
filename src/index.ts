@@ -13,8 +13,8 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!')
 })
 
+// Create a song
 app.post('/create', async (req: Request, res: Response) => {
-  // console.log({body: req.body})
   const { title, artist, album, genre } = req.body
 
   const song = new Song({
@@ -25,7 +25,14 @@ app.post('/create', async (req: Request, res: Response) => {
   })
   await song.save()
 
-  res.send('Song created')
+  res.status(201).send('Song created')
+})
+
+// List songs
+app.get('/list', async (req: Request, res: Response) => {
+  const songs = await Song.find().exec()
+
+  res.status(200).json(songs)
 })
 
 app.listen(port, () => {

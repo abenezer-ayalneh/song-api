@@ -101,9 +101,9 @@ app.get('/stat', async (req: Request, res: Response) => {
 
   res.status(200).json({
     totalSongs: songsCount,
-    totalArtists: artistsCount[0]['total'],
-    totalAlbums: albumsCount[0]['total'],
-    totalGenres: genresCount[0]['total'],
+    totalArtists: artistsCount[0]?.['total'] ?? 0,
+    totalAlbums: albumsCount[0]?.['total'] ?? 0,
+    totalGenres: genresCount[0]?.['total'] ?? 0,
     songsInEveryGenre,
     songsAndAlbumsOfEveryArtist,
     numberOfSongsInEachAlbum,

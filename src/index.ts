@@ -1,6 +1,7 @@
 import express, {Application, Request, Response} from 'express'
 import dotenv from 'dotenv'
 import {Song} from './utils/db/mongoose'
+import cors from 'cors'
 
 //For env File
 dotenv.config()
@@ -8,6 +9,12 @@ dotenv.config()
 const app: Application = express()
 const port = process.env.PORT || 3000
 app.use(express.json())
+
+const corsOptions = {
+  origin: 'http://localhost:5173',
+  optionsSuccessStatus: 200,
+}
+app.use(cors(corsOptions))
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!')

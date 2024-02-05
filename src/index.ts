@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 app.use(express.json())
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: process.env.CORS_ALLOWED_ORIGIN ?? 'http://localhost:5173',
   optionsSuccessStatus: 200,
 }
 app.use(cors(corsOptions))

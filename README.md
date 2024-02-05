@@ -16,7 +16,11 @@ cp .env.example .env
 ```shell
 docker-compose up -d --build
 ```
-5. Run the development server
+5. Install packages
+```shell
+npm install
+```
+6. Run the development server
 ```shell
 npm run dev
 ```

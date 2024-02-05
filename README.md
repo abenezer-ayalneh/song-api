@@ -1,5 +1,26 @@
 # Song API
-
+## Setup
+1. Clone the project
+```shell
+git clone git@github.com:abenezer-ayalneh/song-api.git
+```
+2. Checkout the ```main``` branch
+```shell
+git checkout main
+```
+3. Copy the ```.env.example``` file to ```.env``` file
+```shell
+cp .env.example .env
+```
+4. Run the docker compose file
+```shell
+docker-compose up -d --build
+```
+5. Run the development server
+```shell
+npm run dev
+```
+## Task
 Develop a Rest API that will let you manage information for songs. Your API will be able to create, list, update and remove songs. You will only need to create one model to handle the
 song data. The expected information are:
 - Title

@@ -4,7 +4,7 @@
   "description": "Song management API",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "npm install && npx tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev src/index.ts"
   },
